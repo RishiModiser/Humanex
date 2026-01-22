@@ -1,0 +1,75 @@
+{
+  "name": "Multi-Page Navigation",
+  "description": "Navigate through multiple pages with scrolling",
+  "actions": [
+    {
+      "id": "m1n2o3p4-q5r6-4567-m1n2-o3p4q5r6s7t8",
+      "type": "navigate",
+      "config": {
+        "url": "https://www.example.com",
+        "waitUntil": "load"
+      }
+    },
+    {
+      "id": "n2o3p4q5-r6s7-4678-n2o3-p4q5r6s7t8u9",
+      "type": "scrollPage",
+      "config": {
+        "scrollType": "position",
+        "position": "middle",
+        "wheelDistance": [100, 200],
+        "sleepTime": [300, 500]
+      }
+    },
+    {
+      "id": "o3p4q5r6-s7t8-4789-o3p4-q5r6s7t8u9v0",
+      "type": "wait",
+      "config": {
+        "duration": 3000
+      }
+    },
+    {
+      "id": "p4q5r6s7-t8u9-4890-p4q5-r6s7t8u9v0w1",
+      "type": "scrollPage",
+      "config": {
+        "scrollType": "position",
+        "position": "bottom",
+        "wheelDistance": [150, 250],
+        "sleepTime": [400, 600]
+      }
+    },
+    {
+      "id": "q5r6s7t8-u9v0-4901-q5r6-s7t8u9v0w1x2",
+      "type": "wait",
+      "config": {
+        "duration": 2000
+      }
+    },
+    {
+      "id": "r6s7t8u9-v0w1-4012-r6s7-t8u9v0w1x2y3",
+      "type": "navigate",
+      "config": {
+        "url": "https://www.example.com/about",
+        "waitUntil": "domcontentloaded"
+      }
+    },
+    {
+      "id": "s7t8u9v0-w1x2-4123-s7t8-u9v0w1x2y3z4",
+      "type": "wait",
+      "config": {
+        "duration": 4000
+      }
+    },
+    {
+      "id": "t8u9v0w1-x2y3-4234-t8u9-v0w1x2y3z4a5",
+      "type": "goBack",
+      "config": {}
+    },
+    {
+      "id": "u9v0w1x2-y3z4-4345-u9v0-w1x2y3z4a5b6",
+      "type": "wait",
+      "config": {
+        "duration": 2000
+      }
+    }
+  ]
+}
