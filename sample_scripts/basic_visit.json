@@ -1,0 +1,38 @@
+{
+  "name": "Basic Website Visit",
+  "description": "Navigate to a website and wait",
+  "actions": [
+    {
+      "id": "7b5e9c2a-3f1d-4a8e-b2c7-9d6e4f8a1b3c",
+      "type": "navigate",
+      "config": {
+        "url": "https://www.example.com",
+        "waitUntil": "domcontentloaded"
+      }
+    },
+    {
+      "id": "3c8d7e1f-9b2a-4d6c-a5e8-7f9b2c4e1d6a",
+      "type": "wait",
+      "config": {
+        "duration": 5000
+      }
+    },
+    {
+      "id": "9a4f2d8c-6e1b-47a3-b9c5-3d7f8a2e1c4b",
+      "type": "scrollPage",
+      "config": {
+        "scrollType": "position",
+        "position": "bottom",
+        "wheelDistance": [100, 200],
+        "sleepTime": [200, 400]
+      }
+    },
+    {
+      "id": "2e7c9b4f-1d8a-43e6-a5b7-9c2f4e8d1a3b",
+      "type": "wait",
+      "config": {
+        "duration": 3000
+      }
+    }
+  ]
+}
