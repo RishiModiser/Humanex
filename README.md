@@ -14,6 +14,23 @@
 
 ---
 
+## ⚠️ IMPORTANT: Running v5.0 vs v4.0
+
+**This repository contains TWO versions:**
+
+1. **v5.0 (RECOMMENDED)** - Modern web application with React + Node.js
+   - 🚀 Use startup scripts: `./start.sh` (Linux/Mac) or `start.bat` (Windows)
+   - 📖 Or run manually: `npm run dev` (see [Quick Start](#usage))
+   - 🌐 Access at: http://localhost:5173
+
+2. **v4.0 (LEGACY)** - Old Python desktop application (`Humanex_v4.0.py`)
+   - ⚠️ This is the OLD version - preserved for license compatibility only
+   - ❌ Don't run this unless you specifically need v4.0
+
+**If you see "old bot", you're running v4.0 by mistake. Use the startup scripts or follow the Quick Start guide below!**
+
+---
+
 ## 🌟 Features
 
 ### Core System
