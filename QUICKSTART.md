@@ -1,5 +1,13 @@
 # HUMANEX BOT - Quick Start Guide
 
+## ⚠️ Important: Use v5.0, Not v4.0!
+
+If you're seeing an "old bot" when running `Humanex_v4.0.py`, that's because it's the **legacy v4.0 version**. 
+
+**Follow this guide to run the NEW v5.0 web application!**
+
+---
+
 ## 🚀 Quick Start (5 minutes)
 
 ### Prerequisites
@@ -9,6 +17,24 @@
 - Internet connection
 
 ### Installation Steps
+
+**EASIEST METHOD - Use Startup Scripts:**
+
+```bash
+# For Linux/Mac:
+./start.sh
+
+# For Windows:
+start.bat
+```
+
+The scripts will automatically:
+- Check Node.js installation
+- Install all dependencies
+- Install Playwright browsers
+- Start the application
+
+**MANUAL METHOD:**
 
 ```bash
 # 1. Navigate to project directory
