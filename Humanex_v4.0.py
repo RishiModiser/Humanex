@@ -12,16 +12,6 @@ import queue
 import tempfile
 import subprocess
 
-from PyQt5.QtWidgets import (
-    QApplication, QWidget, QVBoxLayout, QHBoxLayout, QFormLayout,
-    QLabel, QLineEdit, QPushButton, QFileDialog, QTextEdit, QMessageBox, QComboBox,
-    QProgressBar, QTableWidget, QHeaderView, QAbstractItemView, QCheckBox, QSizePolicy
-)
-from PyQt5.QtGui import QIcon, QFont
-from PyQt5.QtCore import Qt, QTimer, pyqtSignal
-
-from playwright.sync_api import sync_playwright
-
 def show_upgrade_notice():
     """Show upgrade notice for v5.0"""
     print("\n" + "="*80)
@@ -35,13 +25,15 @@ def show_upgrade_notice():
     print("  • Advanced automation features")
     print("  • Better performance and security")
     print("\n📖 HOW TO RUN v5.0:")
-    print("  1. Install dependencies:")
+    print("  1. EASIEST - Use startup scripts:")
+    print("     ./start.sh (Linux/Mac) or start.bat (Windows)")
+    print("\n  2. OR install dependencies manually:")
     print("     npm install")
     print("     cd frontend && npm install && cd ..")
     print("     npx playwright install chromium")
-    print("\n  2. Start the application:")
+    print("\n  3. Then start the application:")
     print("     npm run dev")
-    print("\n  3. Open your browser:")
+    print("\n  4. Open your browser:")
     print("     http://localhost:5173")
     print("\n📚 For more details, see README.md or QUICKSTART.md")
     print("="*80)
@@ -49,6 +41,24 @@ def show_upgrade_notice():
     # Ask user if they want to continue with v4.0
     response = input("\nDo you want to continue with v4.0? (y/n): ").strip().lower()
     return response == 'y' or response == 'yes'
+
+# Show upgrade notice first, before importing heavy dependencies
+if __name__ == "__main__":
+    if not show_upgrade_notice():
+        print("\n✅ Please run the new v5.0 version using the startup scripts or: npm run dev")
+        print("See README.md for complete instructions.\n")
+        sys.exit(0)
+
+# Only import PyQt5 if user chose to continue with v4.0
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QVBoxLayout, QHBoxLayout, QFormLayout,
+    QLabel, QLineEdit, QPushButton, QFileDialog, QTextEdit, QMessageBox, QComboBox,
+    QProgressBar, QTableWidget, QHeaderView, QAbstractItemView, QCheckBox, QSizePolicy
+)
+from PyQt5.QtGui import QIcon, QFont
+from PyQt5.QtCore import Qt, QTimer, pyqtSignal
+
+from playwright.sync_api import sync_playwright
 
 def set_playwright_env():
     import shutil
@@ -1208,12 +1218,8 @@ del "%~f0"
         QTimer.singleShot(1000, self.check_threads_completion)
 
 if __name__ == "__main__":
-    # Show upgrade notice for v5.0
-    if not show_upgrade_notice():
-        print("\n✅ Please run the new v5.0 version using: npm run dev")
-        print("See README.md for complete instructions.\n")
-        sys.exit(0)
-    
+    # The upgrade notice was already shown at import time
+    # If we reach here, user chose to continue with v4.0
     app = QApplication(sys.argv)
     license_win = LicenseWindow()
     license_win.show()
